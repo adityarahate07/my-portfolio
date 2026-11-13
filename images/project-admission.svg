@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 340" width="600" height="340" role="img" aria-label="Student Admission Portal App Illustration">
+  <defs>
+    <linearGradient id="admBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#1e1e38" />
+    </linearGradient>
+    <linearGradient id="phoneScreenGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b" />
+      <stop offset="100%" stop-color="#0f172a" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background Canvas -->
+  <rect width="600" height="340" fill="url(#admBg)" rx="12" />
+
+  <!-- App Feature Graphic Left: Registration Details -->
+  <g transform="translate(60, 60)">
+    <!-- Graduation Cap Icon -->
+    <path d="M 50 25 L 95 45 L 50 65 L 5 45 Z" fill="#38bdf8" />
+    <path d="M 25 55 L 25 75 Q 50 90 75 75 L 75 55" fill="none" stroke="#38bdf8" stroke-width="3" stroke-linecap="round"/>
+    <line x1="90" y1="47" x2="90" y2="75" stroke="#f59e0b" stroke-width="2.5" />
+    <circle cx="90" cy="77" r="3" fill="#f59e0b" />
+
+    <text x="115" y="45" font-family="system-ui, sans-serif" font-size="18" font-weight="700" fill="#f8fafc">College Admissions</text>
+    <text x="115" y="68" font-family="system-ui, sans-serif" font-size="12" fill="#94a3b8">Native Java &amp; XML Architecture</text>
+
+    <!-- Checklist items -->
+    <g transform="translate(0, 95)">
+      <circle cx="15" cy="12" r="9" fill="#10b981" />
+      <path d="M 10 12 L 13 15 L 19 9" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
+      <text x="35" y="16" font-family="system-ui, sans-serif" font-size="12" fill="#e2e8f0">Student Workflow Verification</text>
+
+      <circle cx="15" cy="42" r="9" fill="#10b981" />
+      <path d="M 10 42 L 13 45 L 19 39" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
+      <text x="35" y="46" font-family="system-ui, sans-serif" font-size="12" fill="#e2e8f0">Form Validation &amp; Alert Dialogs</text>
+
+      <circle cx="15" cy="72" r="9" fill="#10b981" />
+      <path d="M 10 72 L 13 75 L 19 69" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
+      <text x="35" y="76" font-family="system-ui, sans-serif" font-size="12" fill="#e2e8f0">Document Submission Records</text>
+    </g>
+  </g>
+
+  <!-- Phone Mockup Right -->
+  <g transform="translate(380, 25)">
+    <!-- Phone Body -->
+    <rect x="0" y="0" width="160" height="290" rx="24" fill="#0f172a" stroke="#475569" stroke-width="3" />
+    <!-- Screen -->
+    <rect x="8" y="10" width="144" height="270" rx="18" fill="url(#phoneScreenGrad)" />
+    <!-- Speaker notch -->
+    <rect x="55" y="16" width="50" height="5" rx="2.5" fill="#334155" />
+
+    <!-- App Header in Screen -->
+    <rect x="18" y="32" width="124" height="30" rx="6" fill="#1d4ed8" />
+    <text x="80" y="52" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#ffffff" text-anchor="middle">Admission Form</text>
+
+    <!-- Form Input Placeholders -->
+    <rect x="18" y="74" width="124" height="18" rx="4" fill="#334155" />
+    <rect x="18" y="100" width="124" height="18" rx="4" fill="#334155" />
+    <rect x="18" y="126" width="124" height="18" rx="4" fill="#334155" />
+
+    <!-- Custom Alert Dialog Popup overlay -->
+    <rect x="14" y="160" width="132" height="100" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+    <circle cx="80" cy="182" r="12" fill="#dbeafe" />
+    <path d="M 75 182 L 78 185 L 85 178" fill="none" stroke="#1d4ed8" stroke-width="2" stroke-linecap="round"/>
+    <text x="80" y="206" font-family="system-ui, sans-serif" font-size="9" font-weight="700" fill="#0f172a" text-anchor="middle">Application Sent!</text>
+    <text x="80" y="220" font-family="system-ui, sans-serif" font-size="7.5" fill="#64748b" text-anchor="middle">Ref: #AD-2026-89</text>
+    <rect x="42" y="230" width="76" height="18" rx="4" fill="#1d4ed8" />
+    <text x="80" y="242" font-family="system-ui, sans-serif" font-size="8" font-weight="600" fill="#ffffff" text-anchor="middle">Continue</text>
+  </g>
+</svg>
