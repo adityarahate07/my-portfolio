@@ -31,17 +31,6 @@ I am a final-year B.Tech Computer Science and Design student with a strong inter
 - CSS
 - JavaScript
 
-## Run Locally
-
-```bash
-python -m http.server 8000
-```
-
-Then open:
-
-```bash
-http://localhost:8000
-```
 
 ## Repository Structure
 
