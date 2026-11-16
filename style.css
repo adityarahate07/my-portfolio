@@ -1,14 +1,15 @@
 /* Variables */
 :root {
-  --color-primary: #1d4ed8;
-  --color-primary-hover: #1e40af;
-  --color-primary-light: #eff6ff;
-  --color-primary-border: #bfdbfe;
-  
+  --color-primary: #2563eb;
+  --color-primary-hover: #1d4ed8;
+  --color-primary-light: #e0edff;
+  --color-primary-border: #bfd9ff;
+  --color-primary-soft: rgba(37, 99, 235, 0.08);
+
   --color-text: #0f172a;
   --color-text-muted: #475569;
-  
-  --color-bg: #f8fafc;
+
+  --color-bg: #f8fbff;
   --color-surface: #ffffff;
   --color-surface-hover: #f1f5f9;
   --color-border: #e2e8f0;
@@ -30,9 +31,9 @@
   --radius-lg: 1.25rem;
   --radius-full: 9999px;
 
-  --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.05), 0 1px 2px rgba(15, 23, 42, 0.04);
-  --shadow-md: 0 4px 8px -1px rgba(15, 23, 42, 0.08), 0 2px 4px -2px rgba(15, 23, 42, 0.04);
-  --shadow-lg: 0 12px 24px -4px rgba(15, 23, 42, 0.1), 0 4px 8px -4px rgba(15, 23, 42, 0.06);
+  --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.06), 0 1px 2px rgba(15, 23, 42, 0.04);
+  --shadow-md: 0 10px 24px -12px rgba(37, 99, 235, 0.25), 0 6px 16px -10px rgba(15, 23, 42, 0.18);
+  --shadow-lg: 0 24px 48px -20px rgba(15, 23, 42, 0.24);
 
   --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   --transition-normal: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -60,7 +61,8 @@ body {
   line-height: var(--line-height-base);
   color: var(--color-text);
   background:
-    radial-gradient(circle at top, rgba(191, 219, 254, 0.35), transparent 35%),
+    radial-gradient(circle at top left, rgba(37, 99, 235, 0.12), transparent 28%),
+    radial-gradient(circle at bottom right, rgba(14, 165, 233, 0.12), transparent 28%),
     var(--color-bg);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -140,11 +142,11 @@ ul {
 }
 
 h2 {
-  font-size: 2rem;
-  font-weight: 700;
+  font-size: clamp(1.7rem, 3vw, 2.2rem);
+  font-weight: 800;
   line-height: var(--line-height-heading);
   color: var(--color-text);
-  letter-spacing: -0.025em;
+  letter-spacing: -0.03em;
   margin-bottom: var(--space-xs);
   position: relative;
   display: inline-block;
@@ -155,7 +157,7 @@ h2::after {
   display: block;
   width: 2.75rem;
   height: 0.25rem;
-  background-color: var(--color-primary);
+  background: linear-gradient(90deg, var(--color-primary), #7dd3fc);
   border-radius: var(--radius-full);
   margin: var(--space-xs) auto 0 auto;
 }
@@ -163,7 +165,7 @@ h2::after {
 .section-subtitle {
   font-size: 1.0625rem;
   color: var(--color-text-muted);
-  line-height: 1.5;
+  line-height: 1.6;
   margin-top: var(--space-xs);
 }
 
@@ -212,17 +214,18 @@ h2::after {
   position: sticky;
   top: 0;
   z-index: 200;
-  background-color: rgba(255, 255, 255, 0.94);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--color-border);
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(148, 163, 184, 0.25);
   box-shadow: 0 0 0 rgba(15, 23, 42, 0);
-  transition: box-shadow var(--transition-fast), background-color var(--transition-fast);
+  transition: box-shadow var(--transition-fast), background-color var(--transition-fast), border-color var(--transition-fast);
 }
 
 .site-header:has(.nav-link:hover),
 .site-header:hover {
   box-shadow: var(--shadow-sm);
+  border-color: rgba(148, 163, 184, 0.35);
 }
 
 .nav-container {
@@ -243,11 +246,12 @@ h2::after {
   display: inline-flex;
   align-items: center;
   min-height: 44px;
-  transition: color var(--transition-fast);
+  transition: color var(--transition-fast), transform var(--transition-fast);
 }
 
 .nav-brand:hover {
   color: var(--color-primary);
+  transform: translateY(-1px);
 }
 
 .nav-menu {
@@ -263,22 +267,25 @@ h2::after {
   min-height: 44px;
   padding: 0.5rem 0.875rem;
   font-size: 0.9375rem;
-  font-weight: 500;
+  font-weight: 600;
   color: var(--color-text-muted);
   border-radius: var(--radius-sm);
-  transition: color var(--transition-fast), background-color var(--transition-fast);
+  transition: color var(--transition-fast), background-color var(--transition-fast), transform var(--transition-fast);
 }
 
 .nav-link:hover {
   color: var(--color-primary);
   background-color: var(--color-primary-light);
+  transform: translateY(-1px);
 }
 
 /* Hero */
 .hero-section {
   padding-top: var(--space-2xl);
   padding-bottom: var(--space-xl);
-  background: radial-gradient(circle at 10% 20%, rgba(239, 246, 255, 0.7) 0%, transparent 60%);
+  background:
+    radial-gradient(circle at 10% 20%, rgba(37, 99, 235, 0.12), transparent 34%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0));
 }
 
 .hero-container {
@@ -292,6 +299,11 @@ h2::after {
   flex-shrink: 0;
   display: flex;
   justify-content: center;
+  padding: 1rem;
+  border-radius: 1.5rem;
+  background: linear-gradient(135deg, rgba(191, 219, 254, 0.7), rgba(255, 255, 255, 0.7));
+  border: 1px solid rgba(191, 219, 254, 0.9);
+  box-shadow: var(--shadow-sm);
 }
 
 .hero-avatar {
@@ -314,30 +326,30 @@ h2::after {
 
 .hero-badge {
   display: inline-block;
-  padding: 0.35rem 0.85rem;
+  padding: 0.4rem 0.9rem;
   background-color: var(--color-primary-light);
   color: var(--color-primary);
   border: 1px solid var(--color-primary-border);
   font-size: 0.8125rem;
-  font-weight: 600;
+  font-weight: 700;
   border-radius: var(--radius-full);
   margin-bottom: var(--space-sm);
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.06em;
 }
 
 h1.hero-title {
-  font-size: 2.5rem;
+  font-size: clamp(2.2rem, 4vw, 3.1rem);
   font-weight: 800;
-  line-height: 1.15;
-  letter-spacing: -0.035em;
+  line-height: 1.1;
+  letter-spacing: -0.04em;
   color: var(--color-text);
   margin-bottom: var(--space-sm);
 }
 
 .hero-bio {
   font-size: 1.0625rem;
-  line-height: 1.65;
+  line-height: 1.7;
   color: var(--color-text-muted);
   margin-bottom: var(--space-md);
   max-width: 38rem;
@@ -366,7 +378,7 @@ h1.hero-title {
 .skill-card {
   display: flex;
   flex-direction: column;
-  background-color: var(--color-bg);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 1), rgba(239, 246, 255, 0.5));
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
   padding: 1.5rem;
@@ -441,6 +453,10 @@ h1.hero-title {
   transform: translateY(-5px);
   box-shadow: var(--shadow-lg);
   border-color: var(--color-primary-border);
+}
+
+.project-card:nth-child(odd) {
+  background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
 }
 
 .project-media {
